@@ -23,12 +23,12 @@ namespace test.Services
         {
         }
 
-        public ProductInventory Add(ProductInventory newProduct)
-        {
-            _context.Products.Add(newProduct);
-            _context.SaveChanges();
-            return newProduct;
-        }
+        //public ProductInventory Add(ProductInventory newProduct)
+        //{
+        //    _context.Products.Add(newProduct);
+        //    _context.SaveChanges();
+        //    return newProduct;
+        //}
 
        
         private IActionResult RedirectToAction(string v)
@@ -62,7 +62,9 @@ namespace test.Services
 
         ProductInventory IProductData.Add(ProductInventory newProduct)
         {
-            throw new NotImplementedException();
+            _context.Products.Add(newProduct);
+            _context.SaveChanges();
+            return newProduct;
         }
     }
 }

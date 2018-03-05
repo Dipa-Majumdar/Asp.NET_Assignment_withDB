@@ -52,7 +52,7 @@ namespace test.Controllers
                 newProduct.Type = model.Type;
 
                 newProduct = _productData.Add(newProduct);
-                return RedirectToAction(nameof(Update), new { Name = newProduct.Name });
+                return RedirectToAction(nameof(List));
             }
             else
             {
