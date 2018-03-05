@@ -1,0 +1,35 @@
+﻿@model test.ViewModels.ProductEditModel
+
+<h1>Product Inventory System</h1>
+<h2>Add Product</h2>
+
+<form method="post">
+    
+    <div>
+    <label asp-for="Name">Product Name:</label>
+    <input asp-for="Name" /><br />
+    <span asp-validation-for="Name"></span>
+    </div>
+  
+    <div>
+    <label asp-for="Price">Product Price:</label>
+    <input asp-for="Price" /><br />
+    <span asp-validation-for="Price"></span>
+    </div>
+   
+    <div>
+    <label asp-for="Quantity">Product Quantity:</label>
+    <input asp-for="Quantity" /><br />
+    <span asp-validation-for="Quantity"></span>
+    </div>
+    
+    <div> 
+    <label asp-for="Type">Product Type:</label>
+    <input asp-for="Type" /><br />
+    <span asp-validation-for="Type"></span>
+    </div>
+
+    <input type="submit" name="save" value="Save" />
+    
+</form>
+ 

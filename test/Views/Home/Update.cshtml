@@ -1,0 +1,38 @@
+﻿@model test.Models.ProductInventory
+@{
+    ViewData["Title"] = "Update Page";
+}
+<h1>Product Inventory System</h1>
+<hr />
+<form method="post">
+
+    <div>
+        <label asp-for="Name">Product Name:</label>
+        <input asp-for="Name" /><br />
+        <br><br>
+    </div>
+
+    <div>
+        <label asp-for="Price">Product Price:</label>
+        <input asp-for="Price" /><br />
+        <br><br>
+    </div>
+
+    <div>
+        <label asp-for="Quantity">Product Quantity:</label>
+
+        <input asp-for="Quantity" /><br />
+        <br><br>
+    </div>
+    <div>
+        <label asp-for="Type">Product Type:</label>
+
+        <input asp-for="Type" /><br />
+        <br><br>
+    </div>
+    <input type="submit" name="update" value="Update" />
+    <a asp-action="list">View All</a><br />
+
+
+
+</form>

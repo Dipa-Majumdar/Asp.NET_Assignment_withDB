@@ -1,0 +1,44 @@
+﻿
+@model test.ViewModels.HomeIndexViewModel
+
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h1>Product Inventory System</h1>
+<hr />
+
+<html>
+<body>
+    <table style="width:100%">
+        @foreach (var item in Model.Products)
+    {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Price
+            </td>
+            <td>
+                @item.Quantity
+                </td>
+            <td>
+                @item.Type
+            </td>
+            <td>
+                <a href="update/@item.Name">update</a>
+            </td>
+           
+            <td>
+                <a href="Delete/@item.Name,@item.Id">delete</a>
+            </td>
+
+           
+        </tr>
+}
+
+    </table>
+</body>
+</html>
