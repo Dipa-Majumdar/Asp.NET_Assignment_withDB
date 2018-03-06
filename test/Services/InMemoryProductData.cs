@@ -51,9 +51,9 @@ namespace test.Services
             _products.Remove(itemToDelete);
         }
 
-        public void DeleteProduct(string Name)
+        public void DeleteProduct(int Id)
         {
-            var itemToDelete = _products.Find(x => x.Name == Name);
+            var itemToDelete = _products.Find(x => x.Id == Id);
             _products.Remove(itemToDelete);
         }
 

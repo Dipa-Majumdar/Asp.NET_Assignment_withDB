@@ -49,7 +49,7 @@ namespace test
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{name?}");
+                    template: "{controller=Home}/{action=Index}/{name?}/{id?}");
             });
         }
     }

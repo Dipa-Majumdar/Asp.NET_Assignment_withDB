@@ -63,7 +63,7 @@ namespace test.Controllers
         public IActionResult Update(string Name,int Id)
         { 
             var model = _productData.Update(Name);
-            _productData.DeleteProduct(Name);
+            _productData.DeleteProduct(Id);
             return View(model);
         }
         [HttpPost]
@@ -84,9 +84,9 @@ namespace test.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult Delete(String Name)
+        public IActionResult Delete(int Id)
         {
-            _productData.DeleteProduct(Name);
+            _productData.DeleteProduct(Id);
             return View();
         }
 

@@ -46,9 +46,9 @@ namespace test.Services
             return _context.Products.FirstOrDefault(r => r.Name == Name);
         }
 
-        void IProductData.DeleteProduct(string Name)
+        void IProductData.DeleteProduct(int Id)
         {
-            var itemToDelete = _context.Products.Where(r => r.Name == Name).FirstOrDefault();
+            var itemToDelete = _context.Products.Where(r => r.Id == Id).FirstOrDefault();
 
             if (itemToDelete != null)
             {
