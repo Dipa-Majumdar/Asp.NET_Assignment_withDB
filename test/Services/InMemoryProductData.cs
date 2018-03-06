@@ -32,10 +32,10 @@ namespace test.Services
             return _products.OrderBy(r=>r.Name);
         }
 
-        public ProductInventory Update(int Id)
+        public ProductInventory Update(int id)
         {
           
-            return _products.Where(r => r.Id == Id).FirstOrDefault();
+            return _products.Where(r => r.Id == id).FirstOrDefault();
             
         }
 
@@ -51,9 +51,9 @@ namespace test.Services
             _products.Remove(itemToDelete);
         }
 
-        public void DeleteProduct(int Id)
+        public void DeleteProduct(int id)
         {
-            var itemToDelete = _products.Find(x => x.Id == Id);
+            var itemToDelete = _products.Find(x => x.Id == id);
             _products.Remove(itemToDelete);
         }
 

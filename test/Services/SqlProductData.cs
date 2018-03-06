@@ -41,14 +41,14 @@ namespace test.Services
            return _context.Products.OrderBy(r => r.Name);
         }
 
-        public ProductInventory Update(int Id)
+        public ProductInventory Update(int id)
         {
-            return _context.Products.Where(r => r.Id == Id).FirstOrDefault();
+            return _context.Products.Where(r => r.Id == id).FirstOrDefault();
         }
 
-        void IProductData.DeleteProduct(int Id)
+        void IProductData.DeleteProduct(int id)
         {
-            var itemToDelete = _context.Products.Where(r => r.Id == Id).FirstOrDefault();
+            var itemToDelete = _context.Products.Where(r => r.Id == id).FirstOrDefault();
 
             if (itemToDelete != null)
             {
@@ -59,9 +59,9 @@ namespace test.Services
 
 
 
-        ProductInventory IProductData.Update(int Id)
+        ProductInventory IProductData.Update(int id)
         {
-            return _context.Products.Where(r => r.Id == Id).FirstOrDefault();
+            return _context.Products.Where(r => r.Id == id).FirstOrDefault();
         }
 
         ProductInventory IProductData.Add(ProductInventory newProduct)

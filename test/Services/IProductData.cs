@@ -10,7 +10,7 @@ namespace test.Services
    public interface IProductData
     {
         IEnumerable<ProductInventory> GetAll();
-        ProductInventory Update(int Id);
+        ProductInventory Update(int id);
         ProductInventory Add(ProductInventory newProduct);
         void DeleteProduct(int id);
     }
