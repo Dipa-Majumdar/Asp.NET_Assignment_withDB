@@ -32,10 +32,10 @@ namespace test.Services
             return _products.OrderBy(r=>r.Name);
         }
 
-        public ProductInventory Update(string name)
+        public ProductInventory Update(int Id)
         {
           
-            return _products.FirstOrDefault(r => r.Name == name);
+            return _products.Where(r => r.Id == Id).FirstOrDefault();
             
         }
 

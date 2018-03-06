@@ -41,9 +41,9 @@ namespace test.Services
            return _context.Products.OrderBy(r => r.Name);
         }
 
-        public ProductInventory Update(string Name)
+        public ProductInventory Update(int Id)
         {
-            return _context.Products.FirstOrDefault(r => r.Name == Name);
+            return _context.Products.Where(r => r.Id == Id).FirstOrDefault();
         }
 
         void IProductData.DeleteProduct(int Id)
@@ -59,9 +59,9 @@ namespace test.Services
 
 
 
-        ProductInventory IProductData.Update(string Name)
+        ProductInventory IProductData.Update(int Id)
         {
-            return _context.Products.FirstOrDefault(r => r.Name == Name);
+            return _context.Products.Where(r => r.Id == Id).FirstOrDefault();
         }
 
         ProductInventory IProductData.Add(ProductInventory newProduct)

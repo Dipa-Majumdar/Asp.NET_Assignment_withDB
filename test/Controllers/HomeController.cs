@@ -62,7 +62,7 @@ namespace test.Controllers
         [HttpGet]
         public IActionResult Update(string Name,int Id)
         { 
-            var model = _productData.Update(Name);
+            var model = _productData.Update(Id);
             _productData.DeleteProduct(Id);
             return View(model);
         }
