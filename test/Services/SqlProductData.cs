@@ -23,14 +23,14 @@ namespace test.Services
         {
         }
 
-        //public ProductInventory Add(ProductInventory newProduct)
-        //{
-        //    _context.Products.Add(newProduct);
-        //    _context.SaveChanges();
-        //    return newProduct;
-        //}
+        public ProductInventory Add(ProductInventory newProduct)
+        {
+            _context.Products.Add(newProduct);
+            _context.SaveChanges();
+            return newProduct;
+        }
 
-       
+
         private IActionResult RedirectToAction(string v)
         {
             throw new NotImplementedException();
@@ -46,14 +46,18 @@ namespace test.Services
             return _context.Products.FirstOrDefault(r => r.Name == Name);
         }
 
-        void IProductData.DeleteProduct(string Name, int Id)
+        void IProductData.DeleteProduct(string Name)
         {
-           // var itemToDelete = _context.Products.Find(x => x.Id == Id);
-           // _context.Products.Remove(itemToDelete);
+            var itemToDelete = _context.Products.Where(r => r.Name == Name).FirstOrDefault();
+
+            if (itemToDelete != null)
+            {
+                _context.Products.Remove(itemToDelete);
+            }
             _context.SaveChanges();
         }
 
-       
+
 
         ProductInventory IProductData.Update(string Name)
         {

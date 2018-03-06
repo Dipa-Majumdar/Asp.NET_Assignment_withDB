@@ -2,6 +2,7 @@
 @model test.ViewModels.HomeIndexViewModel
 
 
+
 @{
     ViewBag.Title = "List";
 }
@@ -11,7 +12,22 @@
 
 <html>
 <body>
+  
     <table style="width:100%">
+        <tr>
+            <td>
+                <label>Name:</label>
+            </td>
+            <td>
+                <label>Price:</label>
+            </td>
+            <td>
+                <label>Quantity:</label>
+            </td>
+            <td>
+                <label>Type:</label>
+            </td>
+        </tr>
         @foreach (var item in Model.Products)
     {
         <tr>
@@ -23,19 +39,19 @@
             </td>
             <td>
                 @item.Quantity
-                </td>
+            </td>
             <td>
                 @item.Type
             </td>
             <td>
                 <a href="update/@item.Name">update</a>
             </td>
-           
+
             <td>
-                <a href="Delete/@item.Name,@item.Id">delete</a>
+                <a href="delete/@item.Name">delete</a>
             </td>
 
-           
+
         </tr>
 }
 
